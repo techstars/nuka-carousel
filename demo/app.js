@@ -17,6 +17,7 @@ export default function App() {
   const [animation, setAnimation] = useState(undefined);
   const [autoplay, setAutoplay] = useState(false);
   const [cellAlign, setCellAlign] = useState('left');
+  const [cellSpacing, setCellSpacing] = useState(0);
   const [heightMode, setHeightMode] = useState('max');
   const [length, setLength] = useState(colors.length);
   const [slideIndex, setSlideIndex] = useState(0);
@@ -66,6 +67,7 @@ export default function App() {
   return (
     <div style={{ width: '50%', margin: 'auto' }}>
       <Carousel
+        cellSpacing={cellSpacing}
         animation={animation}
         autoplay={autoplay}
         cellAlign={cellAlign}
@@ -136,6 +138,13 @@ export default function App() {
           </button>
           <button onClick={() => setAutoplay(prevAutoPlay => !prevAutoPlay)}>
             Toggle Autoplay {autoplay === true ? 'Off' : 'On'}
+          </button>
+          <button
+            onClick={() =>
+              setCellSpacing(prevCellSpacing => (prevCellSpacing > 0 ? 0 : 5))
+            }
+          >
+            Toggle Cellspacing {cellSpacing > 0 ? 'Off' : 'On'}
           </button>
         </div>
 
