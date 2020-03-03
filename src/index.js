@@ -1131,7 +1131,7 @@ export default class Carousel extends React.Component {
     return (
       <div
         className={['slider', this.props.className || ''].join(' ').trim()}
-        onFocus={this.handleFocus}
+        //onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         tabIndex={0}
         style={Object.assign(
